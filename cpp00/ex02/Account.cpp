@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:53:15 by asaux             #+#    #+#             */
-/*   Updated: 2024/09/19 16:10:26 by asaux            ###   ########.fr       */
+/*   Updated: 2024/09/23 14:27:22 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int Account::getNbWithdrawals()
 void Account::displayAccountsInfos()
 {
 	_displayTimestamp();
-	std::cout << " accounts:" << getNbAccounts << ";total:" << getTotalAmount << ";deposits:" << getNbDeposits << ";withdrawals:" << getNbWithdrawals << std::endl;
+	std::cout << " accounts:" << _nbAccounts << ";total:" << _totalAmount << ";deposits:" << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 void Account::_displayTimestamp()
@@ -76,20 +76,39 @@ void Account::_displayTimestamp()
 
 void Account::makeDeposit(int deposit)
 {
-	
+	_displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";p_amout:" << _amount;
+	_amount += deposit;
+	_nbDeposits++;
+	_totalAmount += deposit;
+	_totalNbDeposits++;
+	std::cout << ";deposit:" << deposit << ";amount:" << _amount << ";nb_deposit:" << _nbDeposits << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal)
 {
-	
+	_displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";p_amount:" << _amount;
+	if (_amount < withdrawal)
+	{
+		std::cout << ";withdrawal:refused" << std::endl;
+		return (false);
+	}
+	_amount -= withdrawal;
+	_nbWithdrawals++;
+	_totalAmount -= withdrawal;
+	_totalNbWithdrawals++;
+	std::cout << ";withdrawal:" << withdrawal << ";amount:" << _amount << ";nb_withdrawal:" << _nbWithdrawals << std::endl;
+	return (true);
 }
 
 int Account::checkAmount() const
 {
-	
+	return (_amount);
 }
 
 void Account::displayStatus() const
 {
-	
+	_displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:38:18 by asaux             #+#    #+#             */
-/*   Updated: 2024/09/18 17:10:17 by asaux            ###   ########.fr       */
+/*   Updated: 2024/09/23 11:09:37 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,12 @@ int	main()
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT) : ";
 		std::getline(std::cin, command);
-		std::cout << "TEST : " << command << std::endl;
+		if (std::cin.fail())
+		{
+			std::cout << std::endl;
+			std::cout << "Error. Relaunch phonebook" << std::endl;
+			return (1);
+		}
 		if (command == "ADD")
 			phonebook.addContact();
 		else if (command == "SEARCH")
