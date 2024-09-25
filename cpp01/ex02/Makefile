@@ -1,4 +1,4 @@
-NAME = zombie
+NAME = brain
 
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98

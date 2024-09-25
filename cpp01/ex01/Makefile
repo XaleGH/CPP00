@@ -3,7 +3,7 @@ NAME = zombie
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp Zombie.cpp ZombieHorde.cpp
+SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
