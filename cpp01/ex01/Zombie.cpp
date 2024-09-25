@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:01:36 by asaux             #+#    #+#             */
-/*   Updated: 2024/09/25 15:10:43 by asaux            ###   ########.fr       */
+/*   Created: 2024/09/23 15:01:33 by asaux             #+#    #+#             */
+/*   Updated: 2024/09/25 15:39:24 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-#include <string>
-#include <iostream>
+Zombie::Zombie() : _name("name"){}
 
-class Zombie
+Zombie::~Zombie() {}
+
+void Zombie::annonce() const
 {
-	public:
-		Zombie();
-		~Zombie();
-		void annonce() const;
-		void setName(std::string name);
-	private:
-		std::string _name;
-};
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
-
-#endif
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
+}

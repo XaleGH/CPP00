@@ -6,24 +6,25 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:01:33 by asaux             #+#    #+#             */
-/*   Updated: 2024/09/23 17:39:24 by asaux            ###   ########.fr       */
+/*   Updated: 2024/09/25 15:18:28 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
-{
-	_name = name;
-	std::cout << "Zombie " << _name << " is created." << std::endl;
-}
+Zombie::Zombie() : _name("name"){}
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie " << _name << " is destroyed." << std::endl;
+	std::cout << this->_name << " is destroyed." << std::endl;
 }
 
 void Zombie::annonce() const
 {
-	std::cout << "Zombie " << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
 }

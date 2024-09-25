@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:01:29 by asaux             #+#    #+#             */
-/*   Updated: 2024/09/23 17:27:07 by asaux            ###   ########.fr       */
+/*   Updated: 2024/09/25 15:20:01 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void randomChump(std::string name)
 {
-	Zombie tempZombie(name);
+	Zombie tempZombie;
+	tempZombie.setName(name);
 	tempZombie.annonce();
 }
