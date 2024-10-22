@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:48:26 by asaux             #+#    #+#             */
-/*   Updated: 2024/10/08 17:20:43 by asaux            ###   ########.fr       */
+/*   Updated: 2024/10/22 10:29:34 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int main(int argc, char* argv[])
 	std::string new_filename = filename + ".replace";
 	std::string s1 = argv[2];
 	std::string s2 = argv[3];
+	std::string line;
+	std::string content;
 
 	if (s1.empty())
 	{
@@ -51,7 +53,8 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	std::string content((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+	while (std::getline(fileIn, line))
+		content += line + "\n";
 	fileIn.close();
 
 	content = replaceString(content, s1, s2);
