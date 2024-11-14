@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:27:19 by asaux             #+#    #+#             */
-/*   Updated: 2024/11/05 16:32:00 by asaux            ###   ########.fr       */
+/*   Updated: 2024/11/13 13:15:53 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@
 class ScavTrap : public ClapTrap
 {
 	public:
+		ScavTrap();
 		ScavTrap(const std::string& name);
+		ScavTrap(const ScavTrap& copy);
 		~ScavTrap();
+		
+		ScavTrap& operator=(ScavTrap const& rhs);
 		
 		void attack(const std::string& target);
 		void guardGate();
 };
+
+std::ostream& operator<<(std::ostream& os, const ScavTrap& s);
 
 #endif

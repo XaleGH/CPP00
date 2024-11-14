@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:24:06 by asaux             #+#    #+#             */
-/*   Updated: 2024/11/05 17:36:50 by asaux            ###   ########.fr       */
+/*   Updated: 2024/11/06 11:47:44 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap
 		unsigned int hitPoints;
 		unsigned int energyPoints;
 		unsigned int attackDamage;
-		
+
 	public:
 		ClapTrap(const std::string& name);
 		virtual ~ClapTrap();
