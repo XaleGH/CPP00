@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:27:14 by asaux             #+#    #+#             */
-/*   Updated: 2024/11/08 14:19:47 by asaux            ###   ########.fr       */
+/*   Updated: 2024/11/14 15:25:19 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,18 @@ ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap " << _name << " has been destroyed !" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
+{
+	ClapTrap::operator=(rhs);
+	return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const ScavTrap& s)
+{
+	os << static_cast<const ClapTrap&>(s);
+	return os;
 }
 
 void ScavTrap::attack(const std::string& target)

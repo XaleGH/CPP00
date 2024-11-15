@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:27:14 by asaux             #+#    #+#             */
-/*   Updated: 2024/11/13 13:16:36 by asaux            ###   ########.fr       */
+/*   Updated: 2024/11/14 15:25:19 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ ScavTrap& ScavTrap::operator=(ScavTrap const & rhs)
 
 std::ostream& operator<<(std::ostream& os, const ScavTrap& s)
 {
-    os << static_cast<const ClapTrap&>(s);
-    return os;
+	os << static_cast<const ClapTrap&>(s);
+	return os;
 }
 
 void ScavTrap::attack(const std::string& target)
