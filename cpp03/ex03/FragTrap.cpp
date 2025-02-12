@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:53:01 by asaux             #+#    #+#             */
-/*   Updated: 2024/11/14 15:56:50 by asaux            ###   ########.fr       */
+/*   Updated: 2025/02/12 14:40:29 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ FragTrap::FragTrap() : ClapTrap()
 
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
-	hitPoints = 100;
-	energyPoints = 100;
-	attackDamage = 30;
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	std::cout << "FragTrap " << name << " has been invocated !" << std::endl;
 }
 
@@ -37,7 +37,7 @@ FragTrap::FragTrap( const FragTrap & src ) : ClapTrap(src)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap " << name << " has been revoked !" << std::endl;
+	std::cout << "FragTrap " << _name << " has been revoked !" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(FragTrap const & rhs)
@@ -54,16 +54,16 @@ std::ostream& operator<<(std::ostream& os, const FragTrap& s)
 
 void FragTrap::attack(const std::string& target)
 {
-	if (hitPoints > 0 && energyPoints > 0)
+	if (_hitPoints > 0 && _energyPoints > 0)
 	{
-		std::cout << "FragTrap " << name << " hurls a grenade at " << target << ", causing " << attackDamage << " points of damage." << std::endl;
-		energyPoints--;
+		std::cout << "FragTrap " << _name << " hurls a grenade at " << target << ", causing " << _attackDamage << " points of damage." << std::endl;
+		_energyPoints--;
 	}
 	else
-		std::cout << "FragTrap " << name << " lacks the energy to attack." << std::endl;
+		std::cout << "FragTrap " << _name << " lacks the energy to attack." << std::endl;
 }
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap " << name << " requests a high five!" << std::endl;
+	std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
 }
